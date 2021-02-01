@@ -2,11 +2,9 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
 const config = {
-  entry: {
-    app: './public/index.js'
-  },
+  entry: '/.public/src/index.js',
   output: {
-    path: __dirname + '/dist',
+    path: path.join(__dirname + 'public/dist/'),
     filename: '[name].bundle.js',
   },
   mode: 'development',
@@ -26,7 +24,16 @@ const config = {
   },
   plugins: [
     new WebpackPwaManifest({
+      //the name of the generated manifest file
+      filename: 'manifest.json',
+
+      //we aren't using webpack to generate our html so we set inject to false
+      inject: 'false',
+      
+      /*set fingerprints to 'false' to make the names of the generated 
+      files predictable amking it easier to refer to them in our code*/
       fingerprints: false,
+
       name: 'Travel Budget Tracker',
       short_name: 'Budget Tracker',
       description: 'An application that allows you to enter deposits and expenses offline while travelling without an internet connection.',
