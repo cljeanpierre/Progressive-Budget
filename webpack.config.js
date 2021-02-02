@@ -5,7 +5,7 @@ const config = {
   entry: './public/src/index.js',
   output: {
     path: path.join(__dirname + '/public/dist/'),
-    filename: '[name].bundle.js',
+    filename: 'main.bundle.js',
   },
   mode: 'development',
   module: {
