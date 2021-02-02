@@ -2,9 +2,9 @@ const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
 
 const config = {
-  entry: '/.public/src/index.js',
+  entry: './public/src/index.js',
   output: {
-    path: path.join(__dirname + 'public/dist/'),
+    path: path.join(__dirname + '/public/dist/'),
     filename: '[name].bundle.js',
   },
   mode: 'development',
@@ -43,12 +43,12 @@ const config = {
       start_url: '/',
       icons: [
         {
-          src: path.resolve('public/icons/android-chrome-192x192.png'),
+          src: path.resolve('public/icons/icon-192x192.png'),
           sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('public', 'icons'),
         },
         {
-          src: path.resolve('public/icons/android-chrome-512x512.png'),
+          src: path.resolve('public/icons/icon-512x512.png'),
           sizes: [96, 128, 192, 256, 384, 512],
           destination: path.join('public', 'icons'),
         },
