@@ -7,7 +7,7 @@ const config = {
     path: path.join(__dirname + '/public/dist/'),
     filename: 'main.bundle.js',
   },
-  mode: 'development',
+  mode: 'production',
   module: {
     rules: [
       {
